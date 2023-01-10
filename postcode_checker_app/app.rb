@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require "sinatra/reloader"
+require 'sinatra/reloader'
 require './lib/postcode_checker'
 
 class Application < Sinatra::Base
@@ -13,7 +13,7 @@ class Application < Sinatra::Base
   end
 
   post '/check' do
-    valid = PostcodeChecker.new.valid?(params[:postcode])
+    @valid = PostcodeChecker.new.valid?(params[:postcode])
     return erb(:check)
   end
 end
