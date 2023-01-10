@@ -1,5 +1,5 @@
-require "spec_helper"
-require "rack/test"
+require 'spec_helper'
+require 'rack/test'
 require_relative '../../app'
 
 describe Application do
@@ -25,7 +25,7 @@ describe Application do
 
     context 'POST /' do
       it 'should add the new post' do
-        _response = post(
+        response = post(
           '/posts',
           title: 'A new post',
           content: 'Hi there',
