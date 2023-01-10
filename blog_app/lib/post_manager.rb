@@ -1,6 +1,6 @@
 class PostManager
   def self.instance
-    @instance ||= self.new
+    @instance ||= new
   end
 
   def initialize

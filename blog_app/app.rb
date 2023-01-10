@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require "sinatra/reloader"
+require 'sinatra/reloader'
 require './lib/post'
 require './lib/post_manager'
 
@@ -15,7 +15,7 @@ class Application < Sinatra::Base
   end
 
   get '/' do
-    posts = @post_manager.all_posts
+    @posts = @post_manager.all_posts
 
     return erb(:index)
   end
